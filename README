@@ -1,0 +1,47 @@
+SYNOPSIS
+    In your Makefile.PL:
+
+      use inc::Module::Package 'RDF:standard';
+
+    That's all folks!
+
+DESCRIPTION
+    Really simple Makefile.PL.
+
+FLAVOURS
+    Currently this module only defines the ":standard" flavour.
+
+  :standard
+    In addition to the inherited behavior, this flavour uses the following
+    plugins:
+
+    *   RDF
+
+    *   DOAP
+
+    *   DOAPChangeSets
+
+    *   ReadmeFromPod
+
+    *   AutoLicense
+
+    *   AutoManifest
+
+BUGS
+    Please report any bugs to <http://rt.cpan.org/>.
+
+SEE ALSO
+    Module::Package, Module::Install::RDF, Module::Install::DOAP,
+    Module::Install::DOAPChangeSets .
+
+    <http://www.perlrdf.org/>.
+
+AUTHOR
+    Toby Inkster <tobyink@cpan.org>.
+
+COPYRIGHT AND LICENSE
+    Copyright (C) 2011 by Toby Inkster
+
+    This library is free software; you can redistribute it and/or modify it
+    under the same terms as Perl itself.
+
