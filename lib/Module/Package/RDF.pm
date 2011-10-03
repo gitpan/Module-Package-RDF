@@ -1,6 +1,6 @@
 package Module::Package::RDF;
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 package Module::Package::RDF::standard;
 
@@ -16,7 +16,7 @@ use Module::Install::DOAP 0.001 ();
 use Module::Install::DOAPChangeSets 0.103 ();
 use Log::Log4perl 0 qw(:easy);
 
-our $VERSION = '0.001';
+our $VERSION = '0.002';
 
 use Moo;
 extends 'Module::Package::Plugin';

@@ -14,10 +14,10 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 70150360793a821045b5d4f050f94ae00ceecac5 Changes
+SHA1 46e523e92378fc89d4b5406da236b2f5c56876d2 Changes
 SHA1 f3296a09eb07898f3ba6dd0ece615dafc1b57e16 LICENSE
-SHA1 00efd4fb0edecbfb9dd4e5587b534744761bce6f MANIFEST
-SHA1 3f0bfa86c627c1d984302fba2223ef9384b2d0f0 META.yml
+SHA1 964271a97fdf2b4e4211ab6673767f56f5594109 MANIFEST
+SHA1 a0714876da254c6dcb497d392b573f23add3c3ed META.yml
 SHA1 5391cc35db658809505db2be59d47aa2f073c376 Makefile.PL
 SHA1 4f711fd7596e384cafb94e9ab3cdf9babf0a270d README
 SHA1 75d19eb09b8bbd6443bd50569b7a606bfb715711 TODO
@@ -32,19 +32,22 @@ SHA1 f3e008113f7f49b0625083b6cc358a312854f613 inc/Module/Install/Include.pm
 SHA1 e67589fcbacdda6c98ff34d8e26a004ab0467bdc inc/Module/Install/Makefile.pm
 SHA1 209ea405d4ab94475661bb450d0ea042d2ec25b5 inc/Module/Install/Metadata.pm
 SHA1 340cb74b460e3bbbd121ca38d317c562ed783a2d inc/Module/Install/Package.pm
+SHA1 87011c8a6c6fd2070ddf05c1b9a6c2eb9e074a34 inc/Module/Install/Scripts.pm
 SHA1 1326052d1df1065debee74f9d8583a734b9b3d00 inc/Module/Install/Win32.pm
 SHA1 bb607f3715c40fc3bc1c46496587cdb215bc4fa2 inc/Module/Install/WriteAll.pm
 SHA1 59e3340c94ee95c1e443b7a869f97f9f46839fc2 inc/Module/Package.pm
-SHA1 f7562fa6bf901bfc3e27a196d3d684abae326202 lib/Module/Package/RDF.pm
-SHA1 63232d3312f08dc7c6c29e6df924fec65d43eed7 meta/changes.ttl
-SHA1 f28b6fe842b554d50111a4b96648148d70634ae8 meta/deps.ttl
+SHA1 cc0683078f9c2185c9bf96e59b468ab6f992956c lib/Module/Package/RDF.pm
+SHA1 b758b8132f3453629a95afe0ac910e65911d899c lib/Module/Package/RDF/Create.pm
+SHA1 53f8e7a373077deb8fca0b464677faf4bde23b5e meta/changes.ttl
+SHA1 f7d74f56c6912a4c689c6528087ae3824e9d1e66 meta/deps.ttl
 SHA1 f36e2e5fd5f0bb2f769d32bb753f7715e491cf19 meta/doap.ttl
-SHA1 243289b9c7ba7e881f681e0dcd9cbcf315b8fb52 meta/makefile.ttl
-SHA1 7f545d93d1dcdf124740caaceeac507686c4cc04 t/01basic.t
+SHA1 1539f65a35926e934bb1a7777b7a18ef25e6889e meta/makefile.ttl
+SHA1 e2660ab7e3bd0d5f889de4284a09421537a8348d script/mkdist
+SHA1 3953084a0362de6674c1b6dba5f9b25449c86621 t/01basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iEYEARECAAYFAk6HV7EACgkQzr+BKGoqfTkQpwCcD5mg2q01C3XhjKMi539wgUWc
-jbEAoImgfYEeicDe0myv0aXh2gyUHbDM
-=xAk2
+iEYEARECAAYFAk6JuRoACgkQzr+BKGoqfTlz2QCghMdGqudjpnY1dluRdrXEBWd9
+/6EAnjGb6+UMn110YBPaTGorT15XqW9P
+=tG87
 -----END PGP SIGNATURE-----

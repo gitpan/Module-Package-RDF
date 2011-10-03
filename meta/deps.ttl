@@ -11,6 +11,15 @@
 		"Module::Install::AutoManifest" ,
 		"RDF::Trine 0.133" ,
 		"Log::Log4perl" ,
+		"URI::Escape",
+		"Software::License",
+		"Carp",
+		"IO::All",
+		"Text::Template",
+		"DateTime",
+		"Test::Pod",
+		"Test::Pod::Coverage",
+		"Test::RDF::DOAP::Version",
 		"URI::file 4.0" ;
 	:test_requires
 		"Test::More 0.61" .

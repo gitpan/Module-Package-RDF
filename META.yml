@@ -26,7 +26,11 @@ no_index:
   directory:
     - inc
     - t
+    - xt
 requires:
+  Carp: 0
+  DateTime: 0
+  IO::All: 0
   Log::Log4perl: 0
   Module::Install::AutoLicense: 0.08
   Module::Install::AutoManifest: 0
@@ -36,6 +40,12 @@ requires:
   Module::Install::ReadmeFromPod: 0.12
   Module::Package: 0.29
   RDF::Trine: 0.133
+  Software::License: 0
+  Test::Pod: 0
+  Test::Pod::Coverage: 0
+  Test::RDF::DOAP::Version: 0
+  Text::Template: 0
+  URI::Escape: 0
   URI::file: 4.0
   perl: 5.8.3
 resources:
@@ -43,4 +53,4 @@ resources:
   homepage: https://metacpan.org/release/Module-Package-RDF
   license: http://dev.perl.org/licenses/
   repository: http://goddamn.co.uk/svn-web/perlmods/browse/Module-Package-RDF/
-version: 0.001
+version: 0.002
