@@ -7,4 +7,4 @@
 	:install_script _:mkdist .
 
 _:main <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "lib/Module/Package/RDF.pm" .
-_:mkdist <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "script/mkdist" .
+_:mkdist <http://www.semanticdesktop.org/ontologies/2007/03/22/nfo#fileName> "bin/mkdist" .

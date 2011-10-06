@@ -30,15 +30,19 @@ no_index:
 requires:
   Carp: 0
   DateTime: 0
+  Getopt::ArgvFile: 0
+  Getopt::Long: 0
   IO::All: 0
   Log::Log4perl: 0
+  Module::Install::AutoInstall: 0
   Module::Install::AutoLicense: 0.08
   Module::Install::AutoManifest: 0
-  Module::Install::DOAP: 0.001
-  Module::Install::DOAPChangeSets: 0.103
-  Module::Install::RDF: 0.001
+  Module::Install::DOAP: 0.002
+  Module::Install::DOAPChangeSets: 0.201
+  Module::Install::RDF: 0.002
   Module::Install::ReadmeFromPod: 0.12
-  Module::Package: 0.29
+  Module::Install::TrustMetaYml: 0.001
+  Module::Package: 0.30
   RDF::Trine: 0.133
   Software::License: 0
   Test::Pod: 0
@@ -53,4 +57,4 @@ resources:
   homepage: https://metacpan.org/release/Module-Package-RDF
   license: http://dev.perl.org/licenses/
   repository: http://goddamn.co.uk/svn-web/perlmods/browse/Module-Package-RDF/
-version: 0.002
+version: 0.003

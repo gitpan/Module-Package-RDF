@@ -1,3 +1,4 @@
+bin/mkdist
 Changes
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
@@ -11,9 +12,15 @@ inc/Module/Install/Makefile.pm
 inc/Module/Install/Metadata.pm
 inc/Module/Install/Package.pm
 inc/Module/Install/Scripts.pm
+inc/Module/Install/TrustMetaYml.pm
 inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 inc/Module/Package.pm
+inc/Module/Package/Dist/RDF.pm
+inc/Scalar/Util.pm
+inc/Scalar/Util/PP.pm
+inc/YAML/Tiny.pm
+lib/Module/Package/Dist/RDF.pm
 lib/Module/Package/RDF.pm
 lib/Module/Package/RDF/Create.pm
 LICENSE
@@ -25,7 +32,6 @@ meta/deps.ttl
 meta/doap.ttl
 meta/makefile.ttl
 README
-script/mkdist
 t/01basic.t
 TODO
 SIGNATURE                                Public-key signature (added by MakeMaker)

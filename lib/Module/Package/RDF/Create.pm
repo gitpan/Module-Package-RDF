@@ -1,7 +1,13 @@
 package Module::Package::RDF::Create;
 
 use common::sense;
-our $VERSION = 0.002;
+
+BEGIN {
+	$Module::Package::RDF::Create::AUTHORITY = 'cpan:TOBYINK';
+}
+BEGIN {
+	$Module::Package::RDF::Create::VERSION   = '0.003';
+}
 
 use Carp;
 use DateTime;
@@ -19,7 +25,7 @@ use URI::Escape qw[];
 		my $key = undef;
 		while (my $line = <DATA>)
 		{
-			if ($line =~ /^COMMENCE (.+)$/)
+			if ($line =~ /^COMMENCE\s+(.+)\s*$/)
 			{
 				$key = $1;
 			}
@@ -29,22 +35,22 @@ use URI::Escape qw[];
 			}
 		}
 	}
-	sub get_template
+	sub _get_template
 	{
 		my ($class, $key) = @_;
 		return Text::Template->new(-type=>'string', -source=>$templates{$key});
 	}
-	sub get_template_names
+	sub _get_template_names
 	{
 		my ($class) = @_;
 		return keys %templates;
 	}
 }
 
-sub fill_in_template
+sub _fill_in_template
 {
 	my ($self, $template) = @_;
-	$template = $self->get_template($template) unless ref $template;
+	$template = $self->_get_template($template) unless ref $template;
 	
 	my %hash;
 	while (my ($k, $v) = each %$self)
@@ -57,7 +63,7 @@ sub fill_in_template
 		);
 }
 
-sub iofile
+sub _iofile
 {
 	my ($self, $file) = @_;
 	my $basedir = sprintf($self->{destination}, $self->{dist_name});
@@ -81,7 +87,7 @@ sub create
 	}
 	
 	my %use;
-	if ($options{use})
+	if (ref $options{use} eq 'ARRAY')
 	{
 		%use = map {$_=>1} @{$options{use}};
 	}
@@ -104,6 +110,7 @@ sub set_defaults
 	croak "Need an author name."   unless defined $self->{author}{name};
 	croak "Need an author cpanid." unless defined $self->{author}{cpanid};
 
+	$self->{author}{cpanid} = lc $self->{author}{cpanid};
 	$self->{author}{mbox} ||= sprintf('%s@cpan.org', $self->{author}{cpanid});
 
 	$self->{backpan} ||= sprintf('http://backpan.cpan.org/authors/id/%s/%s/%s/',
@@ -137,7 +144,7 @@ sub set_defaults
 		holder  => $self->{copyright}{holder},
 		});
 	
-	$self->{includes} = [grep {!/^(common_sense|strict|warnings|moose|5.008|5.010|namespace_clean)$/} keys %{$self->{use}}];
+	$self->{includes} = [grep {!/^(common_sense|strict|warnings|moose|5\.[0-9_]+|namespace_clean)$/} keys %{$self->{use}}];
 	
 	{
 		my @mr = @{ $self->{includes} };
@@ -149,7 +156,7 @@ sub set_defaults
 		if (@mr)
 		{
 			$self->{requires} = sprintf(";\n\t:requires %s",
-				(join ' , ', (map { "\"$_\"" } @mr))
+				(join ' , ', (map { my ($pkg, $ver) = split /\s+/, $_; ($ver =~ /^v?[0-9\._]+/) ? "\"$pkg $ver\"" : "\"$pkg\"" } @mr))
 				);
 		}
 		else
@@ -159,8 +166,8 @@ sub set_defaults
 	}
 	
 	$self->{pragmas} ||= join "\n", do {
-			my @pragmas;
-			push @pragmas, ($self->{use}{'5.010'} ? '5.010' : '5.008');
+			my @pragmas = grep { /^5\.[0-9_]+$/ } keys %{$self->{use}};
+			push @pragmas, '5.010' unless @pragmas;
 			push @pragmas, ($self->{use}{common_sense} ? ('common::sense') : ('strict','warnings'));
 			push @pragmas, 'constant { FALSE => 0, TRUE => 1 }';
 			push @pragmas, 'utf8';
@@ -194,43 +201,43 @@ sub create_module
 {
 	my ($self) = @_;
 	
-	$self->iofile( $self->{module_filename} )
-		->print( $self->fill_in_template('module') );
+	$self->_iofile( $self->{module_filename} )
+		->print( $self->_fill_in_template('module') );
 }
 
 sub create_makefile_pl
 {
 	my ($self) = @_;
 	
-	$self->iofile('Makefile.PL')
-		->print($self->fill_in_template('Makefile.PL'));
+	$self->_iofile('Makefile.PL')
+		->print($self->_fill_in_template('Makefile.PL'));
 }
 
 sub create_metadata
 {
 	my ($self) = @_;
 	
-	$self->iofile($_)
-		->print($self->fill_in_template($_))
-		foreach grep { m#^meta/# } $self->get_template_names;
+	$self->_iofile($_)
+		->print($self->_fill_in_template($_))
+		foreach grep { m#^meta/# } $self->_get_template_names;
 }
 
 sub create_tests
 {
 	my ($self) = @_;
 	
-	$self->iofile($_)
-		->print($self->fill_in_template($_))
-		foreach grep { m#^t/# } $self->get_template_names;
+	$self->_iofile($_)
+		->print($self->_fill_in_template($_))
+		foreach grep { m#^t/# } $self->_get_template_names;
 }
 
 sub create_author_tests
 {
 	my ($self) = @_;
 	
-	$self->iofile($_)
-		->print($self->fill_in_template($_))
-		foreach grep { m#^xt/# } $self->get_template_names;
+	$self->_iofile($_)
+		->print($self->_fill_in_template($_))
+		foreach grep { m#^xt/# } $self->_get_template_names;
 }
 
 =head1 NAME
@@ -243,11 +250,32 @@ Module::Package::RDF::Create - create distributions that will use Module::Packag
 
 =head1 DESCRIPTION
 
+This package provides just one (class) method:
+
 =over
 
 =item C<< Module::Package::RDF::Create->create($distname, %options) >>
 
 Create a distribution directory including all needed files.
+
+=back
+
+There are various methods that may be useful for people subclassing this
+class to look at (and possibly override).
+
+=over
+
+=item C<< set_defaults >>
+
+=item C<< create_module >>
+
+=item C<< create_makefile_pl >>
+
+=item C<< create_metadata >>
+
+=item C<< create_tests >>
+
+=item C<< create_author_tests >>
 
 =back
 
@@ -277,36 +305,50 @@ package {$module_name};
 
 {$pragmas}
 
-our $VERSION = '{$version}';
+BEGIN \{
+	${$module_name}::AUTHORITY = 'cpan:{uc $author->{cpanid}}';
+\}
+BEGIN \{
+	${$module_name}::VERSION   = '{$version}';
+\}
 
 {$includes}
-
 {$final_pragmas}
 
 # Your code goes here
 
 {$final_code}
 
-=head1 NAME
+{}__END__
+
+{}=head1 NAME
 
 {$module_name} - {$abstract}
 
-=head1 DESCRIPTION
+{}=head1 SYNOPSIS
 
-=head1 BUGS
+{}=head1 DESCRIPTION
+
+{}=head1 BUGS
 
 Please report any bugs to
 L<http://rt.cpan.org/Dist/Display.html?Queue={URI::Escape::uri_escape($dist_name)}>.
 
-=head1 SEE ALSO
+{}=head1 SEE ALSO
 
-=head1 AUTHOR
+{}=head1 AUTHOR
 
 {$author->{name}} E<lt>{$author->{mbox}}E<gt>.
 
-=head1 COPYRIGHT AND LICENCE
+{}=head1 COPYRIGHT AND LICENCE
 
 {$licence->notice}
+
+{}=head1 DISCLAIMER OF WARRANTIES
+
+THIS PACKAGE IS PROVIDED "AS IS" AND WITHOUT ANY EXPRESS OR IMPLIED
+WARRANTIES, INCLUDING, WITHOUT LIMITATION, THE IMPLIED WARRANTIES OF
+MERCHANTIBILITY AND FITNESS FOR A PARTICULAR PURPOSE.
 
 COMMENCE Makefile.PL
 use inc::Module::Package 'RDF:standard';
@@ -342,6 +384,7 @@ COMMENCE meta/doap.ttl
 	a               :Project ;
 	:programming-language "Perl" ;
 	:name           "{$dist_name}" ;
+	:shortdesc      "{$abstract}" ;
 	:homepage       <https://metacpan.org/release/{URI::Escape::uri_escape($dist_name)}> ;
 	:download-page  <https://metacpan.org/release/{URI::Escape::uri_escape($dist_name)}> ;
 	:bug-database   <http://rt.cpan.org/Dist/Display.html?Queue={URI::Escape::uri_escape($dist_name)}> ;
@@ -388,3 +431,7 @@ COMMENCE xt/03meta_uptodate.t
 use Test::More tests => 1;
 use Test::RDF::DOAP::Version;
 doap_version_ok('{$dist_name}', '{$module_name}');
+
+COMMENCE xt/04eol.t
+use Test::EOL;
+all_perl_files_ok();

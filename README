@@ -15,17 +15,19 @@ FLAVOURS
     In addition to the inherited behavior, this flavour uses the following
     plugins:
 
-    *   RDF
+    *   AutoLicense
+
+    *   AutoManifest
 
     *   DOAP
 
     *   DOAPChangeSets
 
+    *   RDF
+
     *   ReadmeFromPod
 
-    *   AutoLicense
-
-    *   AutoManifest
+    *   TrustMetaYml
 
 BUGS
     Please report any bugs to <http://rt.cpan.org/>.

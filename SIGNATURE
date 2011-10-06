@@ -14,13 +14,14 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 46e523e92378fc89d4b5406da236b2f5c56876d2 Changes
+SHA1 c34fef2c7152955efc5ed8a66e0d54556c98b616 Changes
 SHA1 f3296a09eb07898f3ba6dd0ece615dafc1b57e16 LICENSE
-SHA1 964271a97fdf2b4e4211ab6673767f56f5594109 MANIFEST
-SHA1 a0714876da254c6dcb497d392b573f23add3c3ed META.yml
+SHA1 db4d66a125594fde032ab775a5dff65f60622bd2 MANIFEST
+SHA1 7ba428e7a3aabcc1f6c3dcd5e19e65920e11186d META.yml
 SHA1 5391cc35db658809505db2be59d47aa2f073c376 Makefile.PL
-SHA1 4f711fd7596e384cafb94e9ab3cdf9babf0a270d README
+SHA1 54fe2a7128542f41dd1f234204a30b61661a7f5c README
 SHA1 75d19eb09b8bbd6443bd50569b7a606bfb715711 TODO
+SHA1 53fe8c59f6a3d0c5e63319b7f7ec47fe189c60e6 bin/mkdist
 SHA1 5d94bc10deff1dd74e4bc5dfa6fc015e39271f15 inc/Module/AutoInstall.pm
 SHA1 40106479d4e07f379cb82ca1d69fca92e3a40f47 inc/Module/Install.pm
 SHA1 34a24a530ecf0365cc02e4150b06c9bed702a441 inc/Module/Install/AutoInstall.pm
@@ -31,23 +32,28 @@ SHA1 98daf9d8c50b4b7e8988cf1fa2b86044ad219533 inc/Module/Install/Fetch.pm
 SHA1 f3e008113f7f49b0625083b6cc358a312854f613 inc/Module/Install/Include.pm
 SHA1 e67589fcbacdda6c98ff34d8e26a004ab0467bdc inc/Module/Install/Makefile.pm
 SHA1 209ea405d4ab94475661bb450d0ea042d2ec25b5 inc/Module/Install/Metadata.pm
-SHA1 340cb74b460e3bbbd121ca38d317c562ed783a2d inc/Module/Install/Package.pm
+SHA1 3b9281ddf7dd6d6f5de0a9642c69333023193c80 inc/Module/Install/Package.pm
 SHA1 87011c8a6c6fd2070ddf05c1b9a6c2eb9e074a34 inc/Module/Install/Scripts.pm
+SHA1 b86d0385e10881db680d28bde94f275e49e34a27 inc/Module/Install/TrustMetaYml.pm
 SHA1 1326052d1df1065debee74f9d8583a734b9b3d00 inc/Module/Install/Win32.pm
 SHA1 bb607f3715c40fc3bc1c46496587cdb215bc4fa2 inc/Module/Install/WriteAll.pm
-SHA1 59e3340c94ee95c1e443b7a869f97f9f46839fc2 inc/Module/Package.pm
-SHA1 cc0683078f9c2185c9bf96e59b468ab6f992956c lib/Module/Package/RDF.pm
-SHA1 b758b8132f3453629a95afe0ac910e65911d899c lib/Module/Package/RDF/Create.pm
-SHA1 53f8e7a373077deb8fca0b464677faf4bde23b5e meta/changes.ttl
-SHA1 f7d74f56c6912a4c689c6528087ae3824e9d1e66 meta/deps.ttl
+SHA1 26d58a041cd6b3d21db98b32e8fd1841aae21204 inc/Module/Package.pm
+SHA1 4db02ca3854a0d95bf38139e9b714cc85b618189 inc/Module/Package/Dist/RDF.pm
+SHA1 775bd24f2fdbb6dce51a8b5b0cdb01fccfce83c4 inc/Scalar/Util.pm
+SHA1 b1b664983568bf822c327599eb88e223483ae96a inc/Scalar/Util/PP.pm
+SHA1 eef6bff62046bff2ce08ba132d0b58fba30f40b4 inc/YAML/Tiny.pm
+SHA1 96bd40eb7d71d6a8fdf10083fc77cf6442f3f596 lib/Module/Package/Dist/RDF.pm
+SHA1 30743140f775e9fc01862ccd4709628477839743 lib/Module/Package/RDF.pm
+SHA1 10d7d2fa8489f81198d5ea5fa3a6befd63d3e5f1 lib/Module/Package/RDF/Create.pm
+SHA1 c38943d80f5497c9ef9b2e8f3f138cf66276f674 meta/changes.ttl
+SHA1 11bafc5c894cb24661a88a687f2e1fe8b3dbe54d meta/deps.ttl
 SHA1 f36e2e5fd5f0bb2f769d32bb753f7715e491cf19 meta/doap.ttl
-SHA1 1539f65a35926e934bb1a7777b7a18ef25e6889e meta/makefile.ttl
-SHA1 e2660ab7e3bd0d5f889de4284a09421537a8348d script/mkdist
+SHA1 c8a898e4ef7c1f45eda6a70ff9dcd691f68544db meta/makefile.ttl
 SHA1 3953084a0362de6674c1b6dba5f9b25449c86621 t/01basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iEYEARECAAYFAk6JuRoACgkQzr+BKGoqfTlz2QCghMdGqudjpnY1dluRdrXEBWd9
-/6EAnjGb6+UMn110YBPaTGorT15XqW9P
-=tG87
+iEYEARECAAYFAk6N+n0ACgkQzr+BKGoqfTlxAACfaptnvX01KpR0xsFkQO7g4Pmq
+0+gAmwZuRw7I21SbtYkyppbA1QopZ/o4
+=mSY7
 -----END PGP SIGNATURE-----
