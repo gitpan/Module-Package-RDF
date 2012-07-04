@@ -1,31 +1,24 @@
 package Module::Package::RDF;
 
 use 5.008003;
-BEGIN {
-	$Module::Package::RDF::AUTHORITY = 'cpan:TOBYINK';
-	$Module::Package::RDF::VERSION   = '0.005';
-}
-
-package Module::Package::RDF::standard;
-
-use 5.008003;
 use strict;
 
-use RDF::Trine 0.133 ();
+use RDF::Trine 0.135 ();
+use RDF::TriN3 0.200 ();
 use Module::Package 0.30 ();
 use Module::Install::AutoInstall 0 ();
 use Module::Install::AutoLicense 0.08 ();
 use Module::Install::AutoManifest 0 ();
 use Module::Install::ReadmeFromPod 0.12 ();
-use Module::Install::RDF 0.002 ();
+use Module::Install::RDF 0.006 ();
 use Module::Install::DOAP 0.002 ();
-use Module::Install::DOAPChangeSets 0.201 ();
+use Module::Install::DOAPChangeSets 0.203 ();
 use Module::Install::TrustMetaYml 0.001 ();
 use Log::Log4perl 0 qw(:easy);
 
 BEGIN {
-        $Module::Package::RDF::standard::AUTHORITY = 'cpan:TOBYINK';
-        $Module::Package::RDF::standard::VERSION   = '0.005';
+	$Module::Package::RDF::AUTHORITY = 'cpan:TOBYINK';
+	$Module::Package::RDF::VERSION   = '0.006';
 }
 
 use Moo;
@@ -38,6 +31,7 @@ sub main
 	$self->mi->trust_meta_yml;
 	$self->mi->rdf_metadata;
 	$self->mi->doap_metadata;
+	$self->mi->static_config;
 	$self->mi->sign;
 	
 	$self->mi->include_deps('Module::Package::Dist::RDF');
@@ -59,15 +53,27 @@ sub main
 	$self->post_all_from(sub {$self->mi->clean_files('SIGNATURE')});
 }
 
-# We don't want to auto-invoke all_from...
+# We __don't__ want to auto-invoke all_from...
 sub all_from
 {
 	my $self = shift;
-	# $self->mi->_all_from(@_);
+	# $self->mi->_all_from(@_); # NO THANK YOU!
 	$_->() for @{$self->{post_all_from} || []};
 }
 
 sub write_deps_list {}
+
+{
+	package Module::Package::RDF::standard;
+	use 5.008003;
+	BEGIN {
+		$Module::Package::RDF::standard::AUTHORITY = 'cpan:TOBYINK';
+		$Module::Package::RDF::standard::VERSION   = '0.006';
+		@Module::Package::RDF::standard::ISA       = 'Module::Package::RDF';
+	}
+}
+
+1;
 
 __END__
 
@@ -79,7 +85,7 @@ Module::Package::RDF - drive your distribution with RDF
 
 In your Makefile.PL:
 
-  use inc::Module::Package 'RDF:standard';
+  use inc::Module::Package 'RDF';
 
 That's all folks!
 
@@ -92,6 +98,11 @@ Really simple Makefile.PL.
 Currently this module only defines the C<:standard> flavour.
 
 =head2 :standard
+
+This is the default, so the following are equivalent:
+
+  use inc::Module::Package 'RDF';
+  use inc::Module::Package 'RDF:standard';
 
 In addition to the inherited behavior, this flavour uses the following plugins:
 
@@ -113,6 +124,8 @@ In addition to the inherited behavior, this flavour uses the following plugins:
 
 =back
 
+And sets C<< static_config >> and C<< sign >>.
+
 =head1 BUGS
 
 Please report any bugs to L<http://rt.cpan.org/>.
@@ -132,7 +145,7 @@ Toby Inkster E<lt>tobyink@cpan.orgE<gt>.
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright (C) 2011 by Toby Inkster
+Copyright (C) 2011-2012 by Toby Inkster
 
 This library is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
