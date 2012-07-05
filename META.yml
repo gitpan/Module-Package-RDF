@@ -59,4 +59,4 @@ resources:
   homepage: https://metacpan.org/release/Module-Package-RDF
   license: http://dev.perl.org/licenses/
   repository: https://bitbucket.org/tobyink/p5-module-package-rdf
-version: 0.007
+version: 0.008
