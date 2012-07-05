@@ -14,10 +14,10 @@ not run its Makefile.PL or Build.PL.
 -----BEGIN PGP SIGNED MESSAGE-----
 Hash: SHA1
 
-SHA1 8c2aa806222c53e32e4d817489f087d7ab0c0b0a Changes
+SHA1 d1857e5787a650983fc40330d279501a31ccf4d1 Changes
 SHA1 cc087c3dd6e1b519c680e68cd0231735a68300a0 LICENSE
-SHA1 747feb40a8877814b8222891703781fe1014669c MANIFEST
-SHA1 6b7633c286fff4917d87638234778018a84c6ab2 META.yml
+SHA1 6c439d29a9491ebef53ea92dbb7a7d576cb4ac99 MANIFEST
+SHA1 81487cc25c14595931dc884fa74d5c49244f77eb META.yml
 SHA1 5391cc35db658809505db2be59d47aa2f073c376 Makefile.PL
 SHA1 9dcba46ebef81d5b37ecd701767d81cb32f0a301 README
 SHA1 395cfb97a3a70b6a7d60e521f084a985a73feedc TODO
@@ -34,26 +34,27 @@ SHA1 b62ca5e2d58fa66766ccf4d64574f9e1a2250b34 inc/Module/Install/Makefile.pm
 SHA1 1aa925be410bb3bfcd84a16985921f66073cc1d2 inc/Module/Install/Metadata.pm
 SHA1 3b9281ddf7dd6d6f5de0a9642c69333023193c80 inc/Module/Install/Package.pm
 SHA1 4d793c044726e06fe35d8d129b76da2803377f92 inc/Module/Install/Scripts.pm
-SHA1 b86d0385e10881db680d28bde94f275e49e34a27 inc/Module/Install/TrustMetaYml.pm
+SHA1 9de7b5129351499c048328dfa718d0eab557cf30 inc/Module/Install/TrustMetaYml.pm
 SHA1 e4196994fa75e98bdfa2be0bdeeffef66de88171 inc/Module/Install/Win32.pm
 SHA1 c3a6d0d5b84feb3280622e9599e86247d58b0d18 inc/Module/Install/WriteAll.pm
 SHA1 26d58a041cd6b3d21db98b32e8fd1841aae21204 inc/Module/Package.pm
-SHA1 44c4eb4e1519e4e76937b168dae04528d777b7a1 inc/Module/Package/Dist/RDF.pm
+SHA1 33e1b1418cce181175e151a178cbeaad756eb747 inc/Module/Package/Dist/RDF.pm
 SHA1 0e0eed2e69d9583081868cf4f220068d0a018568 inc/Scalar/Util.pm
 SHA1 feb933cefe2e3762e8322bd6071a2499f3440da1 inc/YAML/Tiny.pm
 SHA1 8105c0510a773b56840995fb4dd2dc64fe9ddaee inc/unicore/Name.pm
-SHA1 4937a554358a6d0c10fb3abe1f7de16dde342f09 lib/App/mkdist.pm
-SHA1 2f85727b9e2bceb4c7c8c4197b2bd1b82e482a9a lib/Module/Package/Dist/RDF.pm
-SHA1 8cf15f3a68d823c8175fef182b373c387351b57a lib/Module/Package/RDF.pm
-SHA1 6fd5b4130d6a66cc33d535d1fbbd4ace6a911b9a meta/changes.ttl
-SHA1 0df72de84e882344e81dd172662bab99ec35700f meta/deps.ttl
-SHA1 f36e2e5fd5f0bb2f769d32bb753f7715e491cf19 meta/doap.ttl
-SHA1 c8a898e4ef7c1f45eda6a70ff9dcd691f68544db meta/makefile.ttl
+SHA1 36df501c7c9b73c282c5174ed54d8283b2f2cbf2 inc/utf8.pm
+SHA1 262f1e3f6a9016bcde30e94bef566a83eff8d1bd lib/App/mkdist.pm
+SHA1 4fec27f925be6d5db7f7141f79931cabc3405cb3 lib/Module/Package/Dist/RDF.pm
+SHA1 066e69c693744c4c4a8ae2341160b9bd94a1b2ff lib/Module/Package/RDF.pm
+SHA1 e35b7de23aa77d73502aac6af216079cc13e51fc meta/changes.ttl
+SHA1 ea813de23fb264575b865ccbf34199218cae1d1a meta/deps.pret
+SHA1 cebf786ad3dc74689ed67ef2b2accff1849cceb7 meta/doap.ttl
+SHA1 2c193a957854f94b27515a1841d72a1c444614fd meta/makefile.pret
 SHA1 3953084a0362de6674c1b6dba5f9b25449c86621 t/01basic.t
 -----BEGIN PGP SIGNATURE-----
 Version: GnuPG v1.4.10 (GNU/Linux)
 
-iEYEARECAAYFAk/0un4ACgkQzr+BKGoqfTnx6gCfRHkOxjfEjJAF9AVQGlxKjeUs
-WqsAoKn3lomxLbvGBteiLPtKhsNxpqQe
-=Jgre
+iEYEARECAAYFAk/1g6sACgkQzr+BKGoqfTkQRgCdFNu2iVIaUlSRZfl4DwMnS03U
+ZEoAniPYeSCv9HmQdsuRPmmuYYHfPmTY
+=ZvuL
 -----END PGP SIGNATURE-----

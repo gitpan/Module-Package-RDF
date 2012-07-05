@@ -19,6 +19,7 @@ inc/Module/Package.pm
 inc/Module/Package/Dist/RDF.pm
 inc/Scalar/Util.pm
 inc/unicore/Name.pm
+inc/utf8.pm
 inc/YAML/Tiny.pm
 lib/App/mkdist.pm
 lib/Module/Package/Dist/RDF.pm
@@ -28,9 +29,9 @@ Makefile.PL
 MANIFEST			This list of files
 META.yml
 meta/changes.ttl
-meta/deps.ttl
+meta/deps.pret
 meta/doap.ttl
-meta/makefile.ttl
+meta/makefile.pret
 README
 t/01basic.t
 TODO
