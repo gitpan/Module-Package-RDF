@@ -1,5 +1,6 @@
 bin/mkdist
 Changes
+HACKING
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -22,6 +23,8 @@ inc/unicore/Name.pm
 inc/utf8.pm
 inc/YAML/Tiny.pm
 lib/App/mkdist.pm
+lib/Module/Install/Admin/StandardDocuments.pm
+lib/Module/Install/StandardDocuments.pm
 lib/Module/Package/Dist/RDF.pm
 lib/Module/Package/RDF.pm
 LICENSE
