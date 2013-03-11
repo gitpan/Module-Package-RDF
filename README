@@ -27,6 +27,8 @@ FLAVOURS
 
     *   AutoManifest
 
+    *   Copyright
+
     *   DOAP
 
     *   DOAPChangeSets
@@ -52,7 +54,7 @@ AUTHOR
     Toby Inkster <tobyink@cpan.org>.
 
 COPYRIGHT AND LICENSE
-    Copyright (C) 2011-2012 by Toby Inkster
+    Copyright (C) 2011-2013 by Toby Inkster
 
     This library is free software; you can redistribute it and/or modify it
     under the same terms as Perl itself.

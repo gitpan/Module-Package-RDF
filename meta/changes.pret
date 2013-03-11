@@ -118,3 +118,17 @@ my:v_0-009
 		dcs:item   [ rdfs:label "Module::Install::StandardDocuments."@en; a dcs:Addition ] ;
 		dcs:item   [ rdfs:label "bin/mkdist now sports a --package_flavour option."@en ] ;
 	] .
+
+### PretDSL below this point...
+
+`Module-Package-RDF 0.010 cpan:TOBYINK`
+	issued        2013-03-11;
+	changeset     [
+		item "use Module::Install::Copyright"^^Change;
+		item [
+			a dcs:Bugfix;
+			label "Avoid auto-deps thingy from picking up Module::Install::StandardDocuments as a dep - it's bundled";
+			dcs:fixes RT#82158;
+			dcs:thanks cpan:CHORNY;
+		];
+	] .

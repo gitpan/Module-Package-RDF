@@ -39,6 +39,7 @@ requires:
   Module::Install::AutoInstall: 0
   Module::Install::AutoLicense: 0.08
   Module::Install::AutoManifest: 0
+  Module::Install::Copyright: 0.003
   Module::Install::DOAP: 0.004
   Module::Install::DOAPChangeSets: 0.203
   Module::Install::RDF: 0.007
@@ -60,4 +61,4 @@ resources:
   homepage: https://metacpan.org/release/Module-Package-RDF
   license: http://dev.perl.org/licenses/
   repository: https://bitbucket.org/tobyink/p5-module-package-rdf
-version: 0.009
+version: 0.010
