@@ -12,8 +12,22 @@ require Exporter;
 require List::Util; # List::Util loads the XS
 
 our @ISA       = qw(Exporter);
-our @EXPORT_OK = qw(blessed dualvar reftype weaken isweak tainted readonly openhandle refaddr isvstring looks_like_number set_prototype);
-our $VERSION    = "1.25";
+our @EXPORT_OK = qw(
+  blessed
+  dualvar
+  isdual
+  isvstring
+  isweak
+  looks_like_number
+  openhandle
+  readonly
+  refaddr
+  reftype
+  set_prototype
+  tainted
+  weaken
+);
+our $VERSION    = "1.27";
 $VERSION   = eval $VERSION;
 
 our @EXPORT_FAIL;
@@ -46,4 +60,4 @@ sub export_fail {
 
 __END__
 
-#line 261
+#line 303
