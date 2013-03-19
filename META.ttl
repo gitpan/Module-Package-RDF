@@ -39,7 +39,8 @@ dist:project
 	cpant:requires    "Module::Install::AutoInstall 0"^^cpant:dsWithVersion;
 	cpant:requires    "Module::Install::AutoLicense 0.08"^^cpant:dsWithVersion;
 	cpant:requires    "Module::Install::AutoManifest"^^cpant:dsWithoutVersion;
-	cpant:requires    "Module::Install::Copyright 0.003"^^cpant:dsWithVersion;
+	cpant:requires    "Module::Install::Copyright 0.004"^^cpant:dsWithVersion;
+	cpant:requires    "Module::Install::Credits 0.004"^^cpant:dsWithVersion;
 	cpant:requires    "Module::Install::DOAP 0.004"^^cpant:dsWithVersion;
 	cpant:requires    "Module::Install::DOAPChangeSets 0.203"^^cpant:dsWithVersion;
 	cpant:requires    "Module::Install::RDF 0.008"^^cpant:dsWithVersion;
@@ -90,6 +91,7 @@ dist:project
 	doap:release      dist:v_0-009;
 	doap:release      dist:v_0-010;
 	doap:release      dist:v_0-011;
+	doap:release      dist:v_0-012;
 	doap:repository   [
 		a doap:HgRepository;
 		doap:browse <https://bitbucket.org/tobyink/p5-module-package-rdf>;
@@ -293,6 +295,20 @@ dist:v_0-011
 	dcs:released-by   cpan:tobyink;
 	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Package-RDF-0.011.tar.gz>;
 	doap:revision     "0.011"^^xsd:string.
+
+dist:v_0-012
+	a                 doap:Version;
+	dc:identifier     "Module-Package-RDF-0.012"^^xsd:string;
+	dc:issued         "2013-03-19"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Addition;
+			rdfs:label "use Module::Install::Changes";
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Package-RDF-0.012.tar.gz>;
+	doap:revision     "0.012"^^xsd:string.
 
 cpan:chorny
 	a                 foaf:Person;

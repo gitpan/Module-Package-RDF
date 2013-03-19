@@ -3,7 +3,8 @@ Upstream-Name: Module-Package-RDF
 Upstream-Contact: Toby Inkster <tobyink@cpan.org>
 Source: https://metacpan.org/release/Module-Package-RDF
 
-Files: Changes
+Files: CREDITS
+ Changes
  HACKING
  LICENSE
  MANIFEST.SKIP

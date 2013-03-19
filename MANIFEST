@@ -1,6 +1,7 @@
 bin/mkdist
 Changes
 COPYRIGHT
+CREDITS
 HACKING
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
