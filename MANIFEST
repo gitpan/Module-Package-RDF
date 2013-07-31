@@ -1,8 +1,8 @@
 bin/mkdist
 Changes
+CONTRIBUTING
 COPYRIGHT
 CREDITS
-HACKING
 inc/Module/AutoInstall.pm
 inc/Module/Install.pm
 inc/Module/Install/AutoInstall.pm
@@ -20,9 +20,6 @@ inc/Module/Install/Win32.pm
 inc/Module/Install/WriteAll.pm
 inc/Module/Package.pm
 inc/Module/Package/Dist/RDF.pm
-inc/Scalar/Util.pm
-inc/unicore/Name.pm
-inc/utf8.pm
 inc/YAML/Tiny.pm
 lib/App/mkdist.pm
 lib/Module/Install/Admin/StandardDocuments.pm

@@ -6,6 +6,12 @@ Home page:    <https://metacpan.org/release/Module-Package-RDF>
 Bug tracker:  <http://rt.cpan.org/Dist/Display.html?Queue=Module-Package-RDF>
 Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
+0.013  2013-03-19
+
+ - (Update) Bump versions of several dependencies.
+ - (Update) Switch to doap-deps vocab for expressing project dependencies
+   (mkdist).
+
 0.012  2013-03-19
 
  - (Addition) use Module::Install::Changes
@@ -18,6 +24,7 @@ Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
  - (Bugfix) Avoid auto-deps thingy from picking up
    Module::Install::StandardDocuments as a dep - it's bundled
+   Fixes RT#82158
    ++$CHORNY
  - use Module::Install::Copyright
 
@@ -32,7 +39,7 @@ Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
  - (Bugfix) Get t/01basic.t working again.
 
-0.007  2012-07-05  # Bond, James Bond
+0.007  2012-07-05  Bond, James Bond
 
  - (Packaging Update) Bump versions of some dependencies.
 
@@ -75,6 +82,6 @@ Maintainer:   Toby Inkster <mailto:tobyink@cpan.org>
 
  - (Addition) Include mkdist script and Module::Package::RDF::Create.
 
-0.001  2011-10-01  # Initial release
+0.001  2011-10-01  Initial release
 
 

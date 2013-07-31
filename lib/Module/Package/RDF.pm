@@ -11,17 +11,17 @@ use Module::Install::AutoLicense 0.08 ();
 use Module::Install::AutoManifest 0 ();
 use Module::Install::ReadmeFromPod 0.12 ();
 use Module::Install::StandardDocuments ();
-use Module::Install::Copyright 0.004 ();
-use Module::Install::Credits 0.004 ();
-use Module::Install::RDF 0.008 ();
-use Module::Install::DOAP 0.002 ();
-use Module::Install::DOAPChangeSets 0.203 ();
-use Module::Install::TrustMetaYml 0.001 ();
+use Module::Install::Copyright 0.009 ();
+use Module::Install::Credits 0.009 ();
+use Module::Install::RDF 0.009 ();
+use Module::Install::DOAP 0.005 ();
+use Module::Install::DOAPChangeSets 0.206 ();
+use Module::Install::TrustMetaYml 0.003 ();
 use Log::Log4perl 0 qw(:easy);
 
 BEGIN {
 	$Module::Package::RDF::AUTHORITY = 'cpan:TOBYINK';
-	$Module::Package::RDF::VERSION   = '0.012';
+	$Module::Package::RDF::VERSION   = '0.013';
 }
 
 use Moo;
@@ -74,7 +74,7 @@ sub write_deps_list {}
 	use 5.010;
 	BEGIN {
 		$Module::Package::RDF::standard::AUTHORITY = 'cpan:TOBYINK';
-		$Module::Package::RDF::standard::VERSION   = '0.012';
+		$Module::Package::RDF::standard::VERSION   = '0.013';
 		@Module::Package::RDF::standard::ISA       = 'Module::Package::RDF';
 	};
 }
@@ -84,7 +84,7 @@ sub write_deps_list {}
 	use 5.010;
 	BEGIN {
 		$Module::Package::RDF::tobyink::AUTHORITY = 'cpan:TOBYINK';
-		$Module::Package::RDF::tobyink::VERSION   = '0.012';
+		$Module::Package::RDF::tobyink::VERSION   = '0.013';
 		@Module::Package::RDF::tobyink::ISA       = 'Module::Package::RDF';
 	};
 	sub main

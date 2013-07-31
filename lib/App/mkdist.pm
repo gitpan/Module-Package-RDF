@@ -4,7 +4,7 @@ use strict;
 
 BEGIN {
 	$App::mkdist::AUTHORITY = 'cpan:TOBYINK';
-	$App::mkdist::VERSION   = '0.012';
+	$App::mkdist::VERSION   = '0.013';
 }
 
 use Carp;
@@ -160,8 +160,8 @@ sub set_defaults
 		if (@mr)
 		{
 			$self->{requires} = sprintf(
-				";\n\t:requires %s",
-				(join ' , ', (map { my ($pkg, $ver) = split /\s+/, $_; ($ver =~ /^v?[0-9\._]+/) ? "p`$pkg $ver`" : "p`$pkg`" } @mr))
+				";\n\t:runtime_requires %s",
+				(join ' , ', (map { my ($pkg, $ver) = split /\s+/, $_; ($ver =~ /^v?[0-9\._]+/) ? "[ :on \"$pkg $ver\"^^:CpanId ]" : "[ :on \"$pkg\"^^:CpanId ]" } @mr))
 			);
 		}
 		else
@@ -383,7 +383,7 @@ COMMENCE meta/doap.pret
 	:homepage             <https://metacpan.org/release/{URI::Escape::uri_escape($dist_name)}>;
 	:download-page        <https://metacpan.org/release/{URI::Escape::uri_escape($dist_name)}>;
 	:bug-database         <http://rt.cpan.org/Dist/Display.html?Queue={URI::Escape::uri_escape($dist_name)}>;
-#	:repository           [ a :HgRepository; :browse <https://bitbucket.org/{lc $author->{cpanid}}/p5-{lc URI::Escape::uri_escape($dist_name)}> ];
+#	:repository           [ a :GitRepository; :browse <https://github.com/{lc $author->{cpanid}}/p5-{lc URI::Escape::uri_escape($dist_name)}> ];
 	:created              {DateTime->now->ymd('-')};
 	:license              <{$licence->url}>;
 	:maintainer           cpan:{uc $author->{cpanid}};
@@ -403,6 +403,8 @@ cpan:{uc $author->{cpanid}}
 
 COMMENCE meta/makefile.pret
 # This file provides instructions for packaging.
+
+@prefix : <http://ontologi.es/doap-deps#>.
 
 `{$dist_name}`
 	perl_version_from m`{$module_name}`;

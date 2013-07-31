@@ -1,8 +1,9 @@
+@prefix bugs:  <http://ontologi.es/doap-bugs#> .
 @prefix cpan:  <http://purl.org/NET/cpan-uri/person/> .
 @prefix cpant: <http://purl.org/NET/cpan-uri/terms#> .
-@prefix dbug:  <http://ontologi.es/doap-bugs#> .
 @prefix dc:    <http://purl.org/dc/terms/> .
 @prefix dcs:   <http://ontologi.es/doap-changeset#> .
+@prefix deps:  <http://ontologi.es/doap-deps#> .
 @prefix dist:  <http://purl.org/NET/cpan-uri/dist/Module-Package-RDF/> .
 @prefix doap:  <http://usefulinc.com/ns/doap#> .
 @prefix foaf:  <http://xmlns.com/foaf/0.1/> .
@@ -29,34 +30,6 @@ dist:project
 		nfo:fileName "lib/Module/Package/RDF.pm";
 		nfo:programmingLanguage "Perl";
 	];
-	cpant:requires    "DateTime"^^cpant:dsWithoutVersion;
-	cpant:requires    "File::HomeDir"^^cpant:dsWithoutVersion;
-	cpant:requires    "Getopt::ArgvFile"^^cpant:dsWithoutVersion;
-	cpant:requires    "Getopt::Long"^^cpant:dsWithoutVersion;
-	cpant:requires    "IO::All"^^cpant:dsWithoutVersion;
-	cpant:requires    "Log::Log4perl"^^cpant:dsWithoutVersion;
-	cpant:requires    "Module::Install 1.04"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Install::AutoInstall 0"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Install::AutoLicense 0.08"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Install::AutoManifest"^^cpant:dsWithoutVersion;
-	cpant:requires    "Module::Install::Copyright 0.004"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Install::Credits 0.004"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Install::DOAP 0.004"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Install::DOAPChangeSets 0.203"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Install::RDF 0.008"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Install::ReadmeFromPod 0.12"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Install::TrustMetaYml 0.001"^^cpant:dsWithVersion;
-	cpant:requires    "Module::Package 0.30"^^cpant:dsWithVersion;
-	cpant:requires    "RDF::TriN3 0.201"^^cpant:dsWithVersion;
-	cpant:requires    "RDF::Trine 0.135"^^cpant:dsWithVersion;
-	cpant:requires    "Software::License"^^cpant:dsWithoutVersion;
-	cpant:requires    "Test::Pod"^^cpant:dsWithoutVersion;
-	cpant:requires    "Test::Pod::Coverage"^^cpant:dsWithoutVersion;
-	cpant:requires    "Test::RDF::DOAP::Version 0.007"^^cpant:dsWithVersion;
-	cpant:requires    "Text::Template"^^cpant:dsWithoutVersion;
-	cpant:requires    "URI::Escape"^^cpant:dsWithoutVersion;
-	cpant:requires    "URI::file 4.0"^^cpant:dsWithVersion;
-	cpant:test_requires "Test::More 0.61"^^cpant:dsWithVersion;
 	cpant:version_from [
 		a nfo:FileDataObject;
 		a nfo:SourceCode;
@@ -65,6 +38,34 @@ dist:project
 		nfo:programmingLanguage "Perl";
 	];
 	dc:contributor    cpan:tobyink;
+	deps:runtime_requires [ deps:on "Module::Package 0.30" ];
+	deps:runtime_requires [ deps:on "Module::Install 1.04" ];
+	deps:runtime_requires [ deps:on "Module::Install::RDF 0.009" ];
+	deps:runtime_requires [ deps:on "Module::Install::DOAP 0.005" ];
+	deps:runtime_requires [ deps:on "Module::Install::Copyright 0.009" ];
+	deps:runtime_requires [ deps:on "Module::Install::Credits 0.009" ];
+	deps:runtime_requires [ deps:on "Module::Install::DOAPChangeSets 0.206" ];
+	deps:runtime_requires [ deps:on "Module::Install::AutoLicense 0.08" ];
+	deps:runtime_requires [ deps:on "Module::Install::ReadmeFromPod 0.12" ];
+	deps:runtime_requires [ deps:on "Module::Install::AutoManifest" ];
+	deps:runtime_requires [ deps:on "Module::Install::TrustMetaYml 0.003" ];
+	deps:runtime_requires [ deps:on "Module::Install::AutoInstall 0" ];
+	deps:runtime_requires [ deps:on "RDF::Trine 0.135" ];
+	deps:runtime_requires [ deps:on "RDF::TriN3 0.201" ];
+	deps:runtime_requires [ deps:on "Log::Log4perl" ];
+	deps:runtime_requires [ deps:on "URI::Escape" ];
+	deps:runtime_requires [ deps:on "Software::License" ];
+	deps:runtime_requires [ deps:on "IO::All" ];
+	deps:runtime_requires [ deps:on "Text::Template" ];
+	deps:runtime_requires [ deps:on "DateTime" ];
+	deps:runtime_requires [ deps:on "Test::Pod" ];
+	deps:runtime_requires [ deps:on "Test::Pod::Coverage" ];
+	deps:runtime_requires [ deps:on "Test::RDF::DOAP::Version 0.007" ];
+	deps:runtime_requires [ deps:on "Getopt::Long" ];
+	deps:runtime_requires [ deps:on "Getopt::ArgvFile" ];
+	deps:runtime_requires [ deps:on "File::HomeDir" ];
+	deps:runtime_requires [ deps:on "URI::file 4.0" ];
+	deps:test_requires [ deps:on "Test::More 0.96" ];
 	doap:bug-database <http://rt.cpan.org/Dist/Display.html?Queue=Module-Package-RDF>;
 	doap:category     [ rdfs:label "RDF" ];
 	doap:category     [ rdfs:label "Semantic Web" ];
@@ -92,9 +93,10 @@ dist:project
 	doap:release      dist:v_0-010;
 	doap:release      dist:v_0-011;
 	doap:release      dist:v_0-012;
+	doap:release      dist:v_0-013;
 	doap:repository   [
-		a doap:HgRepository;
-		doap:browse <https://bitbucket.org/tobyink/p5-module-package-rdf>;
+		a doap:GitRepository;
+		doap:browse <https://github.com/tobyink/p5-module-package-rdf>;
 	];
 	doap:shortdesc    "drive your distribution with RDF"@en;
 	doap:tester       <http://tobyinkster.co.uk/#i>.
@@ -310,6 +312,24 @@ dist:v_0-012
 	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Package-RDF-0.012.tar.gz>;
 	doap:revision     "0.012"^^xsd:string.
 
+dist:v_0-013
+	a                 doap:Version;
+	dc:identifier     "Module-Package-RDF-0.013"^^xsd:string;
+	dc:issued         "2013-03-19"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Update;
+			rdfs:label "Bump versions of several dependencies.";
+		];
+		dcs:item [
+			a dcs:Update;
+			rdfs:label "Switch to doap-deps vocab for expressing project dependencies (mkdist).";
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Package-RDF-0.013.tar.gz>;
+	doap:revision     "0.013"^^xsd:string.
+
 cpan:chorny
 	a                 foaf:Person;
 	foaf:nick         "CHORNY";
@@ -324,7 +344,7 @@ cpan:chorny
 	owl:sameAs        cpan:tobyink.
 
 <http://purl.org/NET/cpan-uri/rt/ticket/82158>
-	a                 dbug:Issue;
-	dbug:id           "82158"^^xsd:string;
-	dbug:page         <https://rt.cpan.org/Ticket/Display.html?id=82158>.
+	a                 bugs:Issue;
+	bugs:id           "82158"^^xsd:string;
+	bugs:page         <https://rt.cpan.org/Ticket/Display.html?id=82158>.
 
