@@ -38,34 +38,56 @@ dist:project
 		nfo:programmingLanguage "Perl";
 	];
 	dc:contributor    cpan:tobyink;
-	deps:runtime_requires [ deps:on "Module::Package 0.30" ];
-	deps:runtime_requires [ deps:on "Module::Install 1.04" ];
-	deps:runtime_requires [ deps:on "Module::Install::RDF 0.009" ];
-	deps:runtime_requires [ deps:on "Module::Install::DOAP 0.005" ];
-	deps:runtime_requires [ deps:on "Module::Install::Copyright 0.009" ];
-	deps:runtime_requires [ deps:on "Module::Install::Credits 0.009" ];
-	deps:runtime_requires [ deps:on "Module::Install::DOAPChangeSets 0.206" ];
-	deps:runtime_requires [ deps:on "Module::Install::AutoLicense 0.08" ];
-	deps:runtime_requires [ deps:on "Module::Install::ReadmeFromPod 0.12" ];
-	deps:runtime_requires [ deps:on "Module::Install::AutoManifest" ];
-	deps:runtime_requires [ deps:on "Module::Install::TrustMetaYml 0.003" ];
-	deps:runtime_requires [ deps:on "Module::Install::AutoInstall 0" ];
-	deps:runtime_requires [ deps:on "RDF::Trine 0.135" ];
-	deps:runtime_requires [ deps:on "RDF::TriN3 0.201" ];
-	deps:runtime_requires [ deps:on "Log::Log4perl" ];
-	deps:runtime_requires [ deps:on "URI::Escape" ];
-	deps:runtime_requires [ deps:on "Software::License" ];
-	deps:runtime_requires [ deps:on "IO::All" ];
-	deps:runtime_requires [ deps:on "Text::Template" ];
-	deps:runtime_requires [ deps:on "DateTime" ];
-	deps:runtime_requires [ deps:on "Test::Pod" ];
-	deps:runtime_requires [ deps:on "Test::Pod::Coverage" ];
-	deps:runtime_requires [ deps:on "Test::RDF::DOAP::Version 0.007" ];
-	deps:runtime_requires [ deps:on "Getopt::Long" ];
-	deps:runtime_requires [ deps:on "Getopt::ArgvFile" ];
-	deps:runtime_requires [ deps:on "File::HomeDir" ];
-	deps:runtime_requires [ deps:on "URI::file 4.0" ];
-	deps:test_requires [ deps:on "Test::More 0.96" ];
+	deps:runtime-requirement [ deps:on "Module::Package 0.30"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "Module::Install 1.04"^^deps:CpanId ];
+	deps:runtime-requirement [
+		deps:on "Module::Install::RDF 0.009"^^deps:CpanId;
+	];
+	deps:runtime-requirement [
+		deps:on "Module::Install::DOAP 0.006"^^deps:CpanId;
+	];
+	deps:runtime-requirement [
+		deps:on "Module::Install::Copyright 0.009"^^deps:CpanId;
+	];
+	deps:runtime-requirement [
+		deps:on "Module::Install::Credits 0.009"^^deps:CpanId;
+	];
+	deps:runtime-requirement [
+		deps:on "Module::Install::DOAPChangeSets 0.206"^^deps:CpanId;
+	];
+	deps:runtime-requirement [
+		deps:on "Module::Install::AutoLicense 0.08"^^deps:CpanId;
+	];
+	deps:runtime-requirement [
+		deps:on "Module::Install::ReadmeFromPod 0.12"^^deps:CpanId;
+	];
+	deps:runtime-requirement [
+		deps:on "Module::Install::AutoManifest"^^deps:CpanId;
+	];
+	deps:runtime-requirement [
+		deps:on "Module::Install::TrustMetaYml 0.003"^^deps:CpanId;
+	];
+	deps:runtime-requirement [
+		deps:on "Module::Install::AutoInstall 0"^^deps:CpanId;
+	];
+	deps:runtime-requirement [ deps:on "RDF::Trine 0.135"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "RDF::TriN3 0.201"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "Log::Log4perl"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "URI::Escape"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "Software::License"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "IO::All"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "Text::Template"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "DateTime"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "Test::Pod"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "Test::Pod::Coverage"^^deps:CpanId ];
+	deps:runtime-requirement [
+		deps:on "Test::RDF::DOAP::Version 0.007"^^deps:CpanId;
+	];
+	deps:runtime-requirement [ deps:on "Getopt::Long"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "Getopt::ArgvFile"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "File::HomeDir"^^deps:CpanId ];
+	deps:runtime-requirement [ deps:on "URI::file 4.0"^^deps:CpanId ];
+	deps:test-requirement [ deps:on "Test::More 0.96"^^deps:CpanId ];
 	doap:bug-database <http://rt.cpan.org/Dist/Display.html?Queue=Module-Package-RDF>;
 	doap:category     [ rdfs:label "RDF" ];
 	doap:category     [ rdfs:label "Semantic Web" ];
@@ -94,6 +116,7 @@ dist:project
 	doap:release      dist:v_0-011;
 	doap:release      dist:v_0-012;
 	doap:release      dist:v_0-013;
+	doap:release      dist:v_0-014;
 	doap:repository   [
 		a doap:GitRepository;
 		doap:browse <https://github.com/tobyink/p5-module-package-rdf>;
@@ -329,6 +352,20 @@ dist:v_0-013
 	dcs:released-by   cpan:tobyink;
 	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Package-RDF-0.013.tar.gz>;
 	doap:revision     "0.013"^^xsd:string.
+
+dist:v_0-014
+	a                 doap:Version;
+	dc:identifier     "Module-Package-RDF-0.014"^^xsd:string;
+	dc:issued         "2013-03-19"^^xsd:date;
+	dcs:changeset     [
+		dcs:item [
+			a dcs:Bugfix;
+			rdfs:label "use Module::Install::DOAP 0.006.";
+		];
+	];
+	dcs:released-by   cpan:tobyink;
+	doap:file-release <http://backpan.cpan.org/authors/id/T/TO/TOBYINK/Module-Package-RDF-0.014.tar.gz>;
+	doap:revision     "0.014"^^xsd:string.
 
 cpan:chorny
 	a                 foaf:Person;
